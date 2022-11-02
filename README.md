@@ -11,11 +11,13 @@ Press 0 to exit (hung up)<br>
 mod_python3<br>
 mod_flite<br>
 
-###Freeswitch Dialplan
+Python script is located at: /usr/share/freeswitch/scripts/ <br>
 
-<extension name="python_demo"><br>
-  <condition field="destination_number" expression="^2407$"><br>
-    <action application="system" data="export PYTHONPATH=$PYTHONPATH:/usr/share/freeswitch/scripts/"><br>
-    <action application="python" data="ivr"/><br>
-  </condition><br>
-</extension><br>
+### Freeswitch Dialplan
+
+>\<extension name="python_demo"\><br>
+>&nbsp; &nbsp; &nbsp; \<condition field="destination_number" expression=**"^2407$"**\><br>
+>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; \<action application="system" data="export PYTHONPATH=$PYTHONPATH:**/usr/share/freeswitch/scripts/**"\><br>
+>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; \<action application="python" data="**ivr**"\/><br>
+> &nbsp; &nbsp; &nbsp;     \</condition\><br>
+>\</extension\><br>
